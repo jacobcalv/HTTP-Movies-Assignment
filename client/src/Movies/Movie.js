@@ -32,7 +32,7 @@ export default class Movie extends React.Component {
     addToSavedList(this.state.movie);
   };
 
-  render() {
+  render(state) {
     
     
     if (!this.state.movie) {
@@ -41,11 +41,11 @@ export default class Movie extends React.Component {
 
     const handleDelete = (event, id) => {
       event.preventDefault()
-      const backHome = () =>  <Redirect to='/'/>
+      const backHome = () =>  <Redirect exact to='/'/>
       axios.delete(`http://localhost:5000/api/movies/${id}`)
       .then(res => {
         console.log(`delted`)
-        backHome()
+        state.props.history.push('/')
       })
       .catch(err => {
         console.log(`${err}, not deleted`)

@@ -41,10 +41,12 @@ function UpdateMovie(props) {
     return (
         <div>
             <h1>Update Movie</h1>
+            
             <form onSubmit={handleSubmit}>
                 <input type="text" name="title" placeholder="Title" value={movie.title} onChange={handleChange} />
                 <input type="text" name="director" placeholder="Director" value={movie.director} onChange={handleChange} />
                 <input type="text" name="metascore" placeholder="Metascore" value={movie.metascore} onChange={handleChange} />
+
                 <input type="text" name="stars" placeholder="Stars" value={movie.stars} onChange={handleChange} />
                 <button>Submit Changes</button>
             </form>
